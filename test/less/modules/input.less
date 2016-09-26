@@ -1,0 +1,31 @@
+.iptWidth(@x) when (@x <= @gridCount) {
+    .ipt-@{x}{
+        width: @x * @gridBase;
+        display: block;
+        box-sizing: border-box;
+    }
+    .iptWidth(( @x + 1 ));
+}
+
+.form-group {
+    position: relative;
+    border-radius: @borderRadius;
+    border: 1px solid #a0a0a0;
+    box-shadow: 0 0 4px #ccc inset;
+    width: 95%;
+    padding: 0 2rem;
+    margin: 0 auto;
+    box-sizing: border-box;
+    .input {
+        font-size: @FontSize;
+        line-height: @iptLineHeight;
+        padding:@iptTopPadding 0;
+        border-radius: 0;
+        text-indent: 1em;
+    }
+}
+
+
+
+
+.iptWidth(1);

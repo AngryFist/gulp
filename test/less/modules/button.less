@@ -1,0 +1,27 @@
+.btnWidth(@x) when (@x <= @gridCount) {
+    .btn-@{x}{
+        width: @x * @gridBase;
+        display: block;
+        margin: @iptTopMargin auto;
+        box-sizing: border-box;
+    }
+    .btnWidth(( @x + 1 ));
+}
+
+.button {
+    font-size: @FontSize;
+    line-height: @iptLineHeight;
+    padding:@iptTopPadding @iptLeftPadding;
+    border-radius: @borderRadius;
+    border: 1px solid #f05100;
+    box-shadow: 0 0 4px #f06924;
+    background-color: #ff7800;
+    color: #fff;
+    text-align: center;
+}
+
+.button:active {
+    background-color: #f05100;
+}
+
+.btnWidth(1);
