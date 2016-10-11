@@ -47,7 +47,7 @@ gulp.task('clean', function() {
         .pipe(clean());
 });
 //css
-gulp.task('css', function() {
+gulp.task('cssmin', function() {
     if(!options.src || !options.dest) {
         return console.log(gulpUtil.colors.red(_C_T.error_pre + _C_T.wrap + _C_T.line_pre + _C_T.arg_src + ' source files, use , split' +  _C_T.wrap + _C_T.line_pre + _C_T.arg_dest + 'build dir' +  _Config_TXT.wrap + _C_T.line_pre + _C_T.arg_name + ' out name, auto add .min, default: style.min.css'));
     }
@@ -61,7 +61,7 @@ gulp.task('css', function() {
 
 });
 //less
-gulp.task('less', function() {
+gulp.task('lessmin', function() {
     if(!options.src || !options.dest) {
         return console.log(gulpUtil.colors.red(_C_T.error_pre + _C_T.wrap + _C_T.line_pre + _C_T.arg_src + ' source files, use , split' +  _C_T.wrap + _C_T.line_pre + _C_T.arg_dest + ' out folder'));
     }
