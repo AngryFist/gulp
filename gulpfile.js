@@ -87,3 +87,16 @@ gulp.task('rjs', function(){
             }))
         .pipe(gulp.dest(options.dest));
 });
+
+gulp.task('jsmin', function() {
+    if(!options.src || !options.dest) {
+        return console.log(gulpUtil.colors.red(_Config_TXT.error_pre + _C_T.wrap + _C_T.line_pre + _C_T.arg_src + ' source main export files, use , split' + _C_T.wrap + _C_T.line_pre + _C_T.arg_dest + ' out folder'));
+    }
+    var _name = options.name || 'build-' + new Date().getTime() + '.js';
+    var _src = options.src.split(',');
+    return gulp.src(_src)
+        .pipe(concat(_name))
+        .pipe(rename({suffix: '.min'}))
+        .pipe(uglify())
+        .pipe(gulp.dest(options.dest));
+});
